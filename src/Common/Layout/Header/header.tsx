@@ -18,7 +18,7 @@ interface Product {
 }
 
 function Header() {
-  const defaultProfileImgUrl = '/public/images/default-profile.jpg';
+  const defaultProfileImgUrl = '/images/default-profile.jpg';
   const [user, setUser] = useState<User>({ displayName: '', profileImg: '' });
   const [keyword, setKeyWord] = useState('');
   const [filteredItems, setFilteredItems] = useState([]);
