@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { Navigate } from 'react-router-dom';
 
 interface Props {
@@ -6,10 +6,7 @@ interface Props {
   status: '';
 }
 
-function PrivatePage({
-  component: Component,
-  status: Status,
-}: Props): ReactElement {
+function PrivatePage({ component: Component, status: Status }: Props) {
   const token = localStorage.getItem('token');
 
   let tokenCheck = false;
@@ -24,7 +21,10 @@ function PrivatePage({
   } else {
     !Status
       ? (result = (
-          <Navigate to="/login" {...alert('접근할수 없는 페이지 입니다')} />
+          <Navigate
+            to="/login"
+            {...{ state: alert('접근할수 없는 페이지 입니다') }}
+          />
         ))
       : (result = Status);
   }

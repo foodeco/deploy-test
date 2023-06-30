@@ -1,4 +1,4 @@
-import { FormEvent, useState, useCallback, useRef } from 'react';
+import { FormEvent, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { PwCheck, emailCheck } from '../Validation ';
 import { JoinForm } from '@/Apis/register';
