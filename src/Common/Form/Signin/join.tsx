@@ -1,19 +1,19 @@
-import { FormEvent, useState, useCallback, useRef } from "react";
-import { useNavigate } from "react-router-dom";
-import { PwCheck, emailCheck } from "../Validation ";
-import { JoinForm } from "@/Apis/register";
-import "./join.scss";
+import { FormEvent, useState, useCallback, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { PwCheck, emailCheck } from '../Validation ';
+import { JoinForm } from '@/Apis/register';
+import './join.scss';
 
 function Join() {
   const navigate = useNavigate();
 
   // 이름 , 비밀번호, 이메일 , 비밀번호 확인
-  const [email, setUserEmail] = useState("");
-  const [displayName, setdDisplayName] = useState("");
-  const [password, setUserPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [profileImgBase64, setProfileImgBase64] = useState<string>("");
-  const imgRef = useRef();
+  const [email, setUserEmail] = useState('');
+  const [displayName, setdDisplayName] = useState('');
+  const [password, setUserPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [profileImgBase64, setProfileImgBase64] = useState<string>('');
+  //const imgRef = useRef();
 
   //비밀번호 유효성 검사
   const [isName, setIsName] = useState(false);
@@ -22,20 +22,20 @@ function Join() {
   const [isPasswordConfirm, setIsPasswordConfirm] = useState(false);
 
   //오류 메세지 저장
-  const [nameMessage, setNameMessage] = useState("");
-  const [emailMessage, setEmailMessage] = useState(""); 
-  const [passwordMessage, setPasswordMessage] = useState("");
-  const [passwordConfirmMessage, setPasswordConfirmMessage] = useState("");
+  const [nameMessage, setNameMessage] = useState('');
+  const [emailMessage, setEmailMessage] = useState('');
+  const [passwordMessage, setPasswordMessage] = useState('');
+  const [passwordConfirmMessage, setPasswordConfirmMessage] = useState('');
 
   const onChangeEmail = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const emails = e.target.value;
       setUserEmail(emails);
       if (emailCheck(emails)) {
-        setEmailMessage("올바른 이메일 형식이에요 : )");
+        setEmailMessage('올바른 이메일 형식이에요 : )');
         setIsEmail(true);
       } else {
-        setEmailMessage("이메일 형식이 틀렸습니다");
+        setEmailMessage('이메일 형식이 틀렸습니다');
         setIsEmail(false);
       }
     },
@@ -45,10 +45,10 @@ function Join() {
   const onChangeName = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setdDisplayName(e.target.value);
     if (e.target.value.length < 2 || e.target.value.length > 21) {
-      setNameMessage("2글자 이상 21글자 미만으로 입력해주세요.");
+      setNameMessage('2글자 이상 21글자 미만으로 입력해주세요.');
       setIsName(false);
     } else {
-      setNameMessage("올바른 이름 형식입니다 :)");
+      setNameMessage('올바른 이름 형식입니다 :)');
       setIsName(true);
     }
   }, []);
@@ -59,10 +59,10 @@ function Join() {
       setUserPassword(passwordCurrent);
 
       if (!PwCheck(passwordCurrent)) {
-        setPasswordMessage("8자리 이상 입력해주세요.");
+        setPasswordMessage('8자리 이상 입력해주세요.');
         setIsPassword(false);
       } else {
-        setPasswordMessage("안전한 비밀번호에요 : )");
+        setPasswordMessage('안전한 비밀번호에요 : )');
         setIsPassword(true);
       }
     },
@@ -76,10 +76,10 @@ function Join() {
     setIsPasswordConfirm: any
   ) => {
     if (password === confirmPassword) {
-      setPasswordConfirmMessage("비밀번호를 똑같이 입력했어요 : )");
+      setPasswordConfirmMessage('비밀번호를 똑같이 입력했어요 : )');
       setIsPasswordConfirm(true);
     } else {
-      setPasswordConfirmMessage("비밀번호가 틀립니다. 다시 입력해주세요.");
+      setPasswordConfirmMessage('비밀번호가 틀립니다. 다시 입력해주세요.');
       setIsPasswordConfirm(false);
     }
   };
@@ -98,28 +98,27 @@ function Join() {
     [password]
   );
 
-  const UploadImage = (event: React.ChangeEvent<HTMLInputElement>)  => {
+  const UploadImage = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = (event.target as HTMLInputElement).files?.[0];
     if (!file) {
       return;
     }
     const reader = new FileReader();
-  
+
     reader.onloadend = () => {
       const base64Data = reader.result as string;
       setProfileImgBase64(base64Data);
     };
-  
+
     if (file) {
       reader.readAsDataURL(file);
     }
-  }
-  
+  };
 
   async function signUp(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (email === undefined || email === "" || email === null) {
-      alert("이메일 입력해주세요.");
+    if (email === undefined || email === '' || email === null) {
+      alert('이메일 입력해주세요.');
       return false;
     }
 
@@ -128,22 +127,26 @@ function Join() {
       isPassword === false ||
       isPasswordConfirm === false
     ) {
-      alert("값이 잘못 되었습니다. 다시 입력해주세요");
+      alert('값이 잘못 되었습니다. 다시 입력해주세요');
       return false;
     }
 
-  
     try {
-      const res = await JoinForm(email, displayName, password,profileImgBase64 );
+      const res = await JoinForm(
+        email,
+        displayName,
+        password,
+        profileImgBase64
+      );
 
       if (res.accessToken) {
-        alert("가입되었습니다.");
-        navigate("/login");
+        alert('가입되었습니다.');
+        navigate('/login');
       } else {
-        alert("가입에 실패했습니다. 다시 시도해주세요.");
+        alert('가입에 실패했습니다. 다시 시도해주세요.');
       }
     } catch (error) {
-      alert("시스템 오류입니다. 문의해주세요.");
+      alert('시스템 오류입니다. 문의해주세요.');
     }
   }
 
@@ -160,12 +163,12 @@ function Join() {
               <input
                 placeholder="이메일을 입력하세요"
                 autoComplete="off"
-                type={"text"}
-                name={"email"}
+                type={'text'}
+                name={'email'}
                 onChange={onChangeEmail}
               />
               {email.length > 0 && (
-                <span className={`message ${isEmail ? "success" : "error"}`}>
+                <span className={`message ${isEmail ? 'success' : 'error'}`}>
                   {emailMessage}
                 </span>
               )}
@@ -175,12 +178,12 @@ function Join() {
               <input
                 placeholder="이름을 입력하세요"
                 autoComplete="off"
-                type={"text"}
-                name={"name"}
+                type={'text'}
+                name={'name'}
                 onChange={onChangeName}
               />
               {displayName.length > 0 && (
-                <span className={`message ${isName ? "success" : "error"}`}>
+                <span className={`message ${isName ? 'success' : 'error'}`}>
                   {nameMessage}
                 </span>
               )}
@@ -190,12 +193,12 @@ function Join() {
               <input
                 placeholder="비밀번호를 입력하세요"
                 autoComplete="off"
-                type={"password"}
-                name={"password"}
+                type={'password'}
+                name={'password'}
                 onChange={onChangePassword}
               />
               {password.length > 0 && (
-                <span className={`message ${isPassword ? "success" : "error"}`}>
+                <span className={`message ${isPassword ? 'success' : 'error'}`}>
                   {passwordMessage}
                 </span>
               )}
@@ -205,14 +208,14 @@ function Join() {
               <input
                 placeholder="비밀번호를 한번 더 입력해주세요"
                 autoComplete="off"
-                type={"password"}
-                name={"passwordConfirm"}
+                type={'password'}
+                name={'passwordConfirm'}
                 onChange={onPasswordConfirmChange}
               />
               {confirmPassword.length > 0 && (
                 <span
                   className={`message ${
-                    isPasswordConfirm ? "success" : "error"
+                    isPasswordConfirm ? 'success' : 'error'
                   }`}
                 >
                   {passwordConfirmMessage}
@@ -220,25 +223,27 @@ function Join() {
               )}
             </div>
 
-              <div className="uploadFilebox">
-                <div className="uploadFilebox-inner">
-                  <span>프로필 이미지 고르기🍒</span>
-                  <input
-                    type="file"
-                    id="file"
-                    name="file"
-                    accept="image/*"
-                    onChange={UploadImage}
-                  />
-                </div>
+            <div className="uploadFilebox">
+              <div className="uploadFilebox-inner">
+                <span>프로필 이미지 고르기🍒</span>
+                <input
+                  type="file"
+                  id="file"
+                  name="file"
+                  accept="image/*"
+                  onChange={UploadImage}
+                />
               </div>
+            </div>
 
             <div className="buttonContainer">
               <button
                 className="buttonBox"
                 type="submit"
                 disabled={
-                  !(isName && isEmail && isPassword && isPasswordConfirm)}>
+                  !(isName && isEmail && isPassword && isPasswordConfirm)
+                }
+              >
                 등록
               </button>
             </div>

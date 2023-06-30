@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
-import Box from "@mui/material/Box";
-import Checkbox from "@mui/material/Checkbox";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import "./CartItems.scss";
+import React, { useEffect } from 'react';
+import { useState } from 'react';
+import Box from '@mui/material/Box';
+import Checkbox from '@mui/material/Checkbox';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import './CartItems.scss';
 
 interface BuyItem {
   id: number;
@@ -12,12 +12,7 @@ interface BuyItem {
   price: number;
   detail_image: string;
   product_no: number;
-  buyItem:number;
-}
-
-interface CartItem {
-  product_no: number;
-  setItems:any;
+  buyItem: number;
 }
 
 interface CartItemsProps {
@@ -42,17 +37,17 @@ const CartItems = ({
   const [buyItem, setbuyItem] = useState<BuyItem[]>([]);
   const [checkedItems, setCheckedItems] = useState<number[]>(check);
   const [allCheck, setallCheck] = useState(false);
- 
+
   useEffect(() => {
     setbuyItem(datalist);
   }, [datalist]);
 
   const handleChange1 = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if(event.target.checked){
-      setCheckedItems(checkOne(event, buyItem, "buy"));
+    if (event.target.checked) {
+      setCheckedItems(checkOne(event, buyItem, 'buy'));
       setallCheck(true);
-   }else{
-      setCheckedItems(checkOne(event, buyItem, "buy"));
+    } else {
+      setCheckedItems(checkOne(event, buyItem, 'buy'));
       setallCheck(false);
     }
   };
@@ -65,10 +60,10 @@ const CartItems = ({
   const children = (el: any, index: number) => (
     <Box
       sx={{
-        display: "flex",
-        flexDirection: "column",
+        display: 'flex',
+        flexDirection: 'column',
         ml: 3,
-        fontSize: "large",
+        fontSize: 'large',
       }}
     >
       <FormControlLabel
@@ -119,7 +114,7 @@ const CartItems = ({
 
       <div className="ItemsContainer">
         {buyItem
-          .filter((el) => el.gubun === "buy")
+          .filter((el) => el.gubun === 'buy')
           .map((el, index) => (
             <div className="ItemContainer" key={index}>
               <div className="CheckContainer">{children(el, index)}</div>
@@ -135,9 +130,7 @@ const CartItems = ({
               </div>
 
               <div className="CartButtonBox">
-                <button
-                  onClick={() => RemoveBuyItem(el.product_no)}
-                >
+                <button onClick={() => RemoveBuyItem(el.product_no)}>
                   삭제
                 </button>
               </div>

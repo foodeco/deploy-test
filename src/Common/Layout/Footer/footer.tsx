@@ -1,20 +1,21 @@
-import "./footer.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faFacebook, faSquareInstagram } from "@fortawesome/free-brands-svg-icons";
+import './footer.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
-  const Donguk = "https://github.com/foodeco";
-  const Haeun = "https://github.com/hahahaday12";
-  const Saeyeon = "https://github.com/saeyeonKim";
-  const Daehyun = "https://github.com/dhmoon11";
-  const Jinyoung = "https://github.com/jinyoungpark231";
-  const Twinkle = "https://github.com/KDT5TeamWink";
+  const Donguk = 'https://github.com/foodeco';
+  const Haeun = 'https://github.com/hahahaday12';
+  const Saeyeon = 'https://github.com/saeyeonKim';
+  const Daehyun = 'https://github.com/dhmoon11';
+  const Jinyoung = 'https://github.com/jinyoungpark231';
+  const Twinkle = 'https://github.com/KDT5TeamWink';
 
   return (
     <footer>
       <div className="Footer-inner">
         <div className="wrap">
-          <FontAwesomeIcon icon={faGithub} 
+          <FontAwesomeIcon
+            icon={faGithub}
             size="2x"
             onClick={() => {
               window.open(Twinkle);
@@ -23,7 +24,8 @@ const Footer = () => {
           <p>Twinkle</p>
         </div>
         <div className="wrap">
-          <FontAwesomeIcon icon={faGithub} 
+          <FontAwesomeIcon
+            icon={faGithub}
             size="2x"
             onClick={() => {
               window.open(Donguk);
@@ -32,7 +34,8 @@ const Footer = () => {
           <p>서동욱</p>
         </div>
         <div className="wrap">
-          <FontAwesomeIcon icon={faGithub} 
+          <FontAwesomeIcon
+            icon={faGithub}
             size="2x"
             onClick={() => {
               window.open(Haeun);
@@ -41,7 +44,8 @@ const Footer = () => {
           <p>김하은</p>
         </div>
         <div className="wrap">
-          <FontAwesomeIcon icon={faGithub} 
+          <FontAwesomeIcon
+            icon={faGithub}
             size="2x"
             onClick={() => {
               window.open(Saeyeon);
@@ -50,7 +54,8 @@ const Footer = () => {
           <p>김세연</p>
         </div>
         <div className="wrap">
-          <FontAwesomeIcon icon={faGithub} 
+          <FontAwesomeIcon
+            icon={faGithub}
             size="2x"
             onClick={() => {
               window.open(Daehyun);
@@ -59,7 +64,8 @@ const Footer = () => {
           <p>문대현</p>
         </div>
         <div className="wrap">
-          <FontAwesomeIcon icon={faGithub} 
+          <FontAwesomeIcon
+            icon={faGithub}
             className="BsGithub"
             size="2x"
             onClick={() => {
@@ -70,9 +76,9 @@ const Footer = () => {
         </div>
       </div>
       <div className="Logo-box">
-        <img src="/images/Wink_logo.png" alt="logo_image"/>
+        <img src="/images/Wink_logo.png" alt="logo_image" />
       </div>
-        <p className="title">toyproject ©️ 5기 7조 twinkle</p>  
+      <p className="title">toyproject ©️ 5기 7조 twinkle</p>
     </footer>
   );
 };

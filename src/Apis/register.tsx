@@ -59,7 +59,6 @@ export const TokenMe = async () => {
 
 export const InfoToken = async (
   displayName: string,
-  profileImgBase64: string,
   oldPassword: string,
   newPassword: string
 ) => {
@@ -67,7 +66,7 @@ export const InfoToken = async (
   const token = localStorage.getItem('token') as string;
   const res = await axiosInstance.put(
     InfoMe,
-    { displayName, profileImgBase64, oldPassword, newPassword },
+    { displayName, oldPassword, newPassword },
     { headers: { ...headers, Authorization: `Bearer ${token}` } }
   );
   return res.data;
