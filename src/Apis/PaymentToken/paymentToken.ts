@@ -1,16 +1,17 @@
-import axios from "axios";
+import axios from 'axios';
+
+const { VITE_IMP_KEY, VITE_IMP_SECERET } = import.meta.env;
 
 export const ajax = axios({
-  url: "/users/getToken",
+  url: '/users/getToken',
   // POST method
-  method: "post",
+  method: 'post',
   // "Content-Type": "application/json"
-  headers: { "Content-Type": "application/json" },
+  headers: { 'Content-Type': 'application/json' },
   data: {
     // REST API키
-    imp_key: "5758023681388354",
+    imp_key: VITE_IMP_KEY,
     // REST API Secret
-    imp_secret:
-      "tCdwGmiflqhMA3It54n6aLBIeA7LCg0O3WYu5qI1SKpwQ85FKXtJsiHu8yUWTynhDx7fxCFY1wsA3KVc",
+    imp_secret: VITE_IMP_SECERET,
   },
 });
