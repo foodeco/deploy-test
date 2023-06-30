@@ -1,0 +1,4 @@
+/cafe24* https://teamwink.cafe24api.com/api/v2/:splat 200
+/iamport* https://api.iamport.kr/:splat 200
+/\* /index.html 200
+/\* /indext.html 404
