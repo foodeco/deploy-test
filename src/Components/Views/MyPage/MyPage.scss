@@ -1,0 +1,271 @@
+@import './common/StyleCommon.scss';
+
+.MyPage-AllLayout {
+  @include AllLayoutStyle;
+
+  .MyPage-AllLayout__center{
+    @include LayoutCenterStyle;
+  
+    .LeftContainer{
+      @include LeftContainerStyle;
+    }
+
+      .RightContainer{
+        @include RightContainerStyle;
+
+        .orderText{
+          position: relative;
+          left:10px;
+          top: 30px;
+          width: 100px;
+          font-size: 25px;
+          font-weight: bold;
+          margin-left: 5rem;
+          // background-color: #F2E7D5;
+        }
+
+        .orderContainer{
+          position: relative;
+          padding-bottom: 400px;
+          //background-color: rgb(148, 255, 124);
+          top: 50px;
+          
+
+          .TopCategory{
+            width: 980px;
+            border-radius: 10px 10px 0px 0px;
+            position:relative;
+            display: flex;
+            height: 40px;
+            // left: 10px;
+            background-color: #e8e0d6;
+            gap: 120px;
+            margin: 0 auto;
+          
+            .TopCategory-inner{
+              width: 70px;
+              //background-color: aqua;
+              height: 20px;
+              position: relative;
+              margin-left: 25px;
+              margin-top: 10px;
+              
+            }
+          }
+
+            .orderBox{
+              position: absolute;
+              padding-bottom: 10px;
+              width: 980px;
+              margin: 0 auto;
+              left: 0;
+              right: 0;
+              height: 400px;
+              //margin-top: 10px;
+              max-height: 450px; /* 스크롤 영역의 최대 높이 설정 */
+              overflow-y: auto;
+              background-color: #faf4ee;
+              border-radius: 0px 0px 10px 10px;
+
+            
+              .orderList {
+                display: flex;
+                width: 960px;
+                margin: 0 auto;
+                margin-top: 20px;
+                padding-bottom: 10px;
+                //background-color: red;                padding: 10px;
+                border-bottom: 2px solid rgb(208, 203, 185);
+              
+                .Buy-ButtonBox{
+                  width: 30px;
+                  height: 20px;
+                  //background-color: aqua;
+                  position: relative;
+                  top:50px;
+                  right: -500px;
+
+                  button{
+                    width:inherit;
+                    position: absolute;
+                  }
+                }
+
+                .orderList-priceBox{
+                  width: auto;
+                  position: relative;
+                  //background-color: rgb(239, 179, 191);
+                  left: 350px;
+                  top:50px;
+                  height: 20px;
+                }
+              }
+
+              .orderList-ImageBox{
+                width: 100px;
+                height: 140px;
+                position: relative;
+                left: 180px;
+                //background-color: aqua;
+                
+                img{
+                  position: absolute;
+                  width: 100px;
+                  height: auto;
+                }
+
+                .orderList-ImageBox__text{
+                  width: auto;
+                  position: relative;
+                }  
+              }
+              
+              span:nth-child(1) {
+                position: relative;
+                left: 10px;
+                top: 50px;
+                height: 20px
+              }
+
+              span:nth-child(2) {
+                position: relative;
+                top: 50px;
+                left: 110px;
+                height: 20px;
+              }
+
+              span:nth-child(3) {
+                position: relative;
+                top: 50px;
+                left: 110px;
+                height: 20px;
+                background-color: rgb(16, 123, 211);
+              } 
+            }
+        }
+
+        .RentContainer-text{
+          position: relative;
+          left:10px;
+          top: 100px;
+          width: 100px;
+          font-size: 25px;
+          font-weight: bold;
+          margin-left: 5rem;
+        }
+
+        .RentContainer{
+          position: relative;
+          padding-bottom: 400px;
+          top: 120px;
+
+          .RentTop-Category{
+            width: 980px;
+            border-radius: 10px 10px 0px 0px;
+            position:relative;
+            display: flex;
+            height: 40px;
+            background-color: #e8e0d6;
+            gap: 120px;
+            margin: 0 auto;
+
+            .RentCategory-inner{
+              width: 70px;
+              height: 20px;
+              position: relative;
+              margin-left: 25px;
+              margin-top: 10px;
+            }
+          }
+
+          .RentBox{
+            position: absolute;
+            padding-bottom: 10px;
+            width: 980px;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            height: 400px;
+            max-height: 450px;
+            overflow-y: auto;
+            background-color: #faf4ee;
+            border-radius: 0px 0px 10px 10px;
+
+            .RentList{
+              display: flex;
+              width: 960px;
+              margin: 0 auto;
+              margin-top: 20px;
+              padding-bottom: 20px;
+              border-bottom: 2px solid rgb(208, 203, 185);
+            
+              .RentList-ImageBox{
+                width: 100px;
+                height: 140px;
+                position: relative;
+                left: 180px;
+                
+                img{
+                  position: absolute;
+                  width: 100px;
+                  height: auto;
+                }
+
+                .RentList-ImageBox__text{
+                  position: relative;
+                  left:120px;
+                  top: 60px;
+                  width: 150px;
+                }
+              }
+
+              span:nth-child(1) {
+                position: relative;
+                left: 10px;
+                top: 60px;
+                height: 20px;
+              }
+
+              span:nth-child(2) {
+                position: relative;
+                top: 60px;
+                left: 110px;
+                height: 20px;
+              }
+
+              span:nth-child(3) {
+                position: relative;
+                top: 60px;
+                left: 110px;
+                height: 20px;
+              } 
+
+              .RentList-priceBox{
+                  width: auto;
+                  position: relative;
+                  left: 350px;
+                  top:60px;
+                  height: 20px;  
+              }
+
+              .Rent-ButtonBox{
+                width: 30px;
+                position: relative;
+                left: 528px; 
+                top:60px;
+                height: 20px;
+
+                button{
+                  width:30px;
+                  position: absolute;
+                }
+              }
+
+            }
+          }
+
+        }
+
+      }
+  }
+}

@@ -1,0 +1,183 @@
+@import './common/StyleCommon.scss';
+
+.UserInfo-AllLayout{
+  @include AllLayoutStyle;
+  padding-bottom: 1000px;
+
+  .UserInfo-AllLayout__center{
+    @include LayoutCenterStyle;
+
+    .LeftContainer{
+      @include LeftContainerStyle;
+    }
+
+    .RightContainer{
+      @include RightContainerStyle;
+
+      .infoContainer{
+        position: relative;
+        top: 3rem;
+        padding-bottom: 50px;
+        margin-left: 4rem;
+        height: 90%;
+
+        .info{
+          position: relative;
+          top: 2rem;
+
+          
+          .infoTag{
+            display: flex;
+
+            .infoText{
+              position: relative;
+              left:2rem;
+              font-size: 24px;
+              font-weight: 900;
+              color:black;
+              padding:.5rem 1rem;
+              margin-left: 2rem;
+            }
+          }
+          
+          .infoBox{
+            position: relative;
+            margin: 2rem 4rem 0 4rem;
+            width: auto;
+            height: 30rem;
+
+            .infoImage-container{
+              display: flex;
+              padding: 1.5rem 1.2rem;
+
+              .infoImage-container__text{
+                width: 8rem;
+                padding-top: 10px;
+                text-align: center;
+                font-weight: bold;
+              }
+
+              .infoImageUpload{
+                position: relative;
+                bottom: -2px;
+                height: 60px;
+                left: 105px;
+                font-size: 13px;
+
+                span{
+                  //color:blue;
+                  //padding: 10px;
+                  padding-top: 5px;
+                }
+
+                .custom-file-input {
+                  width: inherit;
+                  height: 40px;
+                  display: inline-block;
+                  border: 1px solid #ccc;
+                  padding: 9px 12px 0px 25px;
+                  cursor: pointer;
+                  background-color: #f1f1f1;
+                  color: #333;
+                  border-radius: 4px;
+
+                  
+                }
+                
+                
+                
+                .custom-file-input input[type="file"] {
+                  display: none;
+                }
+              }
+
+              .fileMB{
+                position: relative;
+                bottom: -59px;
+                height: 20px;
+                left: -33px;
+                font-size: 13px;
+              }
+
+              .preview-container{
+                width: 200px;
+                height: 200px;
+                position: relative;
+                background-color: #F5F5F5;
+                border-radius: 10px;
+                left: 52px;
+                bottom:26px;
+
+                span{
+                  position: relative;
+                  width: 50px;
+                  margin-left: 50px;
+                  top: 81px;
+                }
+
+                img{
+                  width: inherit;
+                  padding: 8px;
+                  margin: 0 auto;
+                  //position: absolute;
+                  height: inherit;
+                  z-index: 100px;
+                }
+              }
+            }
+
+            .infoList{
+              display:flex;
+              padding: 1.5rem 1.2rem;
+              
+              .infoTitle{
+                width: 8rem;
+                padding-top: 10px;
+                text-align: center;
+                font-weight: bold;
+              }
+
+              .infoItem{
+                .infoItemForm{
+                  padding: 15px;
+                  margin-left: 15px;
+                  width:300px;
+                  background-color: white;
+                  border: solid 1px rgb(221, 221, 221);
+                  border-radius: .5rem;
+                }
+                
+                span{
+                  width: 100px;
+                  height: 30px;
+                  background-color: yellow; 
+                }               
+              }
+              
+              .infoFix{
+                background-color:#C8B6A6;
+                border-radius: 10px;
+                margin-left: 10rem;
+                padding: 15px;
+                width: 12rem;
+                border: none;
+                color:#ffff;
+                font-weight: 700;
+                font-size: 15px;
+                position: absolute;
+                bottom: -103px;
+                left: 77px;
+                cursor: pointer;
+                &:hover {
+                  background-color:#c3b6ab;
+                }
+              }              
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+

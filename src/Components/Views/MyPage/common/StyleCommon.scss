@@ -1,0 +1,32 @@
+@mixin AllLayoutStyle {
+  width: 1600px;
+  height: 1300px;
+  position: relative;
+  margin: 0 auto;
+}
+
+@mixin LayoutCenterStyle {
+  width: 1300px;
+  position: absolute;
+  display: flex;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  padding-top: 120px;
+}
+
+@mixin LeftContainerStyle {
+  width: 250px;
+  //background-color: #F2E7D5;
+  background-color: rgb(227 213 197);
+  border-radius: 10px 0px 0px 10px;
+}
+
+@mixin RightContainerStyle {
+  width: 1500px;
+  border-radius: 0px 10px 10px 0px;
+  padding-bottom: 178px;
+  //background-color: rgb(227 213 197);
+  background-color: #F2E7D5;
+}
+

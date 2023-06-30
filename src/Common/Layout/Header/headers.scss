@@ -1,0 +1,180 @@
+.headerContainer{
+  position: fixed;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  height: 80px;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(202, 159, 18);
+  background-size: 100% 100%;  // 배경 이미지의 크기를 100%로 설정
+  padding: 0 20px;
+  z-index: 900;
+
+    .itemsWrapper{
+      // width: 80%;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      display: flex; 
+      position: absolute;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 100%;
+    }
+
+  .logoBox {
+    width: 150px;
+    margin-top: 10px;
+    height: 50px;
+    display: inline-block;
+    position: relative;
+
+    img {
+      width: 80px;
+      position: absolute;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  .searchBox {
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+
+    input {
+      padding-left: 20px;
+      padding-right: 35px;
+      border: solid 1px #8b8b8b;
+      border-radius: 15px;
+      margin: 0 auto;
+      display: flex;
+      height: 40px;
+      width: 400px;
+      outline: none;
+      left: 0;
+      right: 0;
+      &:focus {
+        // border: 2px solid rgb(202, 159, 18);
+        // box-shadow: 1px 1px 1px 0.3px rgb(202, 159, 18);
+      }
+    }
+    img {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: 5px;
+      top: 6px;
+    }
+  }
+
+  .Header-box {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+    width: 400px;
+
+    .Header-box__text {
+      text-decoration: none;
+      color: gray;
+      font-weight: bold;
+      width: 100px;
+      height: 30px;
+      cursor: pointer;
+      display: flex;
+
+      .Header-box__logout {
+        width: inherit;
+        // padding: 15px 20px 0 0;
+      }
+    }
+
+
+      .cart {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        bottom: 12px;
+        left:40px;
+        // background-color: pink;
+        
+        .cartPhoto {
+          // background-color: olive;
+          cursor: auto;
+          box-sizing: border-box;
+          position: absolute;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+      }
+  }
+
+  .Input-Buttom{
+    width: 400px;
+    padding-bottom: 80px;
+    background-color: #ffff;
+    position: absolute;
+    margin-top: 45px;
+    max-height: 200px; 
+    overflow-y: auto;
+    display: flex;
+    border: 1px solid black;
+
+    .Input-Buttom__inner {
+      width: 380px;
+      margin: 0 auto;
+      padding-bottom: 100px;
+      margin-top: 10px;
+      //background-color: orange;
+
+      .Input-Buttom__innerBox{
+        width: 340px;
+        height: 160px;
+        //background-color: red;
+        margin: 0 auto;
+        cursor: pointer;
+        margin-top: 12px;
+        border-bottom: 1px solid black;
+
+        .Input-Buttom__ImageBox{
+          width: 100px;
+          padding-bottom: 150px;
+          margin-left: 20px;
+          position: relative;
+          background-color: saddlebrown;
+
+          img{
+            width: 100px;
+            height: auto;
+          }
+        }
+
+        .Input-Buttom__title{
+          width: 210px;
+          padding-bottom: 15px;
+          //background-color: yellowgreen;
+          position: relative;
+          left: 140px;
+          bottom: 100px;
+          display: flex;
+        }
+        span:nth-child(1){
+          width: 150px;
+        }
+
+        span:nth-child(2){
+          position: relative;
+          width: 100px;
+          top: 13px;
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+}

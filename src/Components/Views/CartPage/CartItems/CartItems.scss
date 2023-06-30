@@ -1,0 +1,134 @@
+@mixin CartNameStyle {
+  height: auto;
+  //background-color: rgb(14, 133, 237);
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+}
+
+
+.CartPageTable__Buy {
+  width: inherit;
+  height: 45px;
+  background-color: #e8e0d6;
+  position: absolute;
+  border-radius: 10px 10px 0px 0px;
+
+  .LableBox {
+    width: 40px;
+    height: 40px;
+    //background-color: #e18b8b;
+    margin-left: 50px;
+    margin-top: 5px;
+    position: absolute;
+    font-size: 30px;
+  }
+}
+
+  .ProductNameBox {
+    @include CartNameStyle;
+    width: 60px;
+    left: 400px;
+  }
+
+  .PriceNameBox{
+    @include CartNameStyle;
+    right: 400px;
+  }
+
+  .NumberBox{
+    @include CartNameStyle;
+    right: 280px;
+  }
+
+  .DeleteNameBox{
+    @include CartNameStyle;
+    right: 120px;
+  }
+
+  .ItemsContainer {
+    width: 1300px;
+    top: 50px;
+    position: relative;
+    //background-color: #F8EDE3;
+    max-height: 450px; /* 스크롤 영역의 최대 높이 설정 */
+    overflow-y: auto; /* 세로 스크롤 생성 */  
+
+    .ItemContainer {
+      width: 1182px;
+      padding-bottom: 5px;
+      position: relative;
+      margin-top: 20px;
+      border-bottom: 2px solid rgb(208, 203, 185);
+  
+      .CheckContainer{
+        width: 60px;
+        height: 40px;
+        position: absolute;
+        top: 40px;
+        left: 30px;  
+      }
+      
+      .ImageBox{
+        width: 100px;
+        // height: 100px;
+        position: relative;
+        bottom: 10px;
+        margin-left: 160px;
+        background-color: rebeccapurple;
+
+        img{
+          //position: absolute;
+          width: inherit;
+          background-color: orange;
+          height: auto;
+        }
+      }
+
+      .TextInner {
+        width: 450px;
+        padding-bottom: 30px;
+        position: absolute;
+        top: 50px;
+        left: 200px;
+        text-align: center;
+
+        span:nth-child(1) {
+          font-size: 20px;
+        }
+
+        span:nth-child(2) {
+          width: 200px;
+          height: 30px;
+          position: absolute;
+          margin-top: 35px;
+          font-size: 15px;
+        }
+      }
+
+      .PriceInner{
+        width: auto;
+        padding-bottom: 10px;
+        top: 50px;
+        position: absolute;
+        right: 370px;
+        // background-color: olivedrab;
+        font-size: 15px; 
+    }
+
+    .CartButtonBox{
+      width: 60px;
+      position: absolute;
+      top: 35px;
+      right: 100px;
+      // background-color: burlywood;
+      
+      button{
+        display: block;
+        width: 50px;
+        height: 30px;
+        margin-top: 10px;
+      }
+    }
+  }
+}

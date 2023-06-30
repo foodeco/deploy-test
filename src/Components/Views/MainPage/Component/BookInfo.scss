@@ -1,0 +1,42 @@
+.Book-container {
+  margin-bottom: 40px;
+}
+
+.BookInfo-Inner {
+  position: relative;
+  margin-bottom: 20px;
+  height: 8rem;
+  padding: 0.6rem;
+  border-radius: 10px;
+  color: black;
+  background-color: #f0d5b7;
+  box-shadow: 5px 5px 5px #b98563;
+
+  .RoundCircle {
+    width: 0.8rem;
+    height: 0.8rem;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: rgba(255, 254, 253, 0.719);
+    box-shadow: 2px 2px 5px #5a5958;
+  }
+
+  .Namebox {
+    margin: 10px 0;
+
+    span {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  }
+
+  .Main-Pricebox {
+    display: flex;
+    position: relative;
+  }
+
+  .retail-price {
+    padding: 0 5px;
+    font-size: 0.6rem;
+  }
+}
